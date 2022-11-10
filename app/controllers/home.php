@@ -2,8 +2,9 @@
 
 Class Home extends Controller {
     function index() {
-        $image_class = $this->loadModel('image_class');
-        show($image_class);
+        $DB = new Database();
+        $DB->db_connect();
+        
         $this->view("home");
     }
 }
