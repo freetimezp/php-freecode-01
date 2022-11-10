@@ -1,7 +1,9 @@
 <?php 
 
-Class Home {
+Class Home extends Controller {
     function index() {
-        echo "home page";
+        $image_class = $this->loadModel('image_class');
+        show($image_class);
+        $this->view("home");
     }
 }
