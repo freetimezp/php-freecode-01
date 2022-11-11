@@ -2,9 +2,8 @@
 
 Class Home extends Controller {
     function index() {
-        $DB = new Database();
-        $DB->db_connect();
+        $data['page_title'] = "Home";
         
-        $this->view("home");
+        $this->view("home", $data);
     }
 }
