@@ -124,14 +124,6 @@
 
 
 <div class="login-page">
-    <header class="background-white">
-        <div class="line text-center">
-            <h1 class="text-dark text-s-size-30 text-m-size-40 text-l-size-headline text-thin text-line-height-1">
-                Login
-            </h1>
-        </div>
-    </header>
-
     <div class="form">
         <form class="register-form" method="post">
             <input type="text" name="username" placeholder="name" />
@@ -140,7 +132,7 @@
             <button>create</button>
             <p class="message">Already registered? <a href="#">Sign In</a></p>
         </form>
-        <form class="login-form" method="post">
+        <form class="login-form" method="post"></form>
             <input type="text" name="username" placeholder="username" />
             <input type="password" name="password" placeholder="password" />
             <button>login</button>
