@@ -16,7 +16,8 @@
       <?php if(is_array($data['posts'])): ?>
         <?php foreach($data['posts'] as $row): ?>
           <div class="s-12 m-6 l-five">
-            <a class="image-with-hover-overlay image-hover-zoom" href="/" title=<?=$row->title;?>>
+            <a class="image-with-hover-overlay image-hover-zoom" 
+              href="<?=ROOT . 'single_post/' . $row->url_address;?>" title=<?=$row->title;?>>
               <div class="image-hover-overlay background-primary">
                 <div class="image-hover-overlay-content text-center padding-2x">
                   <h3 class="text-white text-size-20 margin-bottom-10"><?=$row->title;?></h3>
