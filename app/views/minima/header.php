@@ -40,11 +40,19 @@
                 <li><a href="<?=ROOT?>home">Home</a></li>
                 <li><a href="<?=ROOT?>about">About Us</a></li>             
                 <li><a href="<?=ROOT?>contact">Contact</a></li>
-                <li><a href="<?=ROOT?>login">Login</a></li>
-                <li><a href="<?=ROOT?>signup">Signup</a></li>
-                <li><a href="<?=ROOT?>upload">Upload</a></li>
+                
+                <?php if(!isset($_SESSION['username'])): ?>
+                  <li><a href="<?=ROOT?>login">Login</a></li>
+                  <li><a href="<?=ROOT?>signup">Signup</a></li>
+                <?php else: ?>
+                  <li><a href="<?=ROOT?>logout">Logout</a></li>
+                  <li><a href="<?=ROOT?>upload">Upload</a></li>
+                <?php endif; ?>
               </ul>
             </div>
-          </div>  
+          </div>
+          <?php if(isset($_SESSION['username'])): ?>
+            <p style="text-align: right; font-size:32px; margin-right: 20px;">Hi, <?=$_SESSION['username']?></p>
+          <?php endif; ?>
         </nav>
       </header>
