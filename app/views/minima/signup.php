@@ -122,8 +122,10 @@
 
 <?php $this->view("minima/header", $data); ?>
 
-
 <div class="login-page">
+    <div style="color: red; padding: 5px; background-color:rgba(105, 27, 85, 0.2); margin-bottom: 10px;             text-align:center;">
+        <?php check_message(); ?>
+    </div>
     <div class="form">
         <form class="register-form" method="post">
             <input type="text" name="username" placeholder="name" />

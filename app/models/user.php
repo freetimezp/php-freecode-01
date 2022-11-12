@@ -14,10 +14,13 @@ Class User {
             $data = $DB->read($query, $arr);
 
             if(is_array($data)) {
+                //show($data);
                 //logged in
-                $_SESSION['user_id'] = $data[0]->userid;
                 $_SESSION['username'] = $data[0]->username;
                 $_SESSION['user_url'] = $data[0]->url_address;
+
+                header("Location:" . ROOT . "home");
+                die;
             }else{
                 $_SESSION['error'] = "Wrong username or password!";
             }
@@ -35,8 +38,11 @@ Class User {
             $arr['username'] = $POST['username'];
             $arr['password'] = $POST['password'];
             $arr['email'] = $POST['email'];
+            $arr['url_address'] = get_random_string_max(60);
+            $arr['date'] = date("Y-m-d H:i:s");
 
-            $query = "INSERT INTO users (username, password, email) VALUES (:username, :password, :email)";
+            $query = "INSERT INTO users (username, password, email, url_address, date) 
+                VALUES (:username, :password, :email, :url_address, :date)";
             $data = $DB->write($query, $arr);
 
             if($data) {
@@ -59,7 +65,6 @@ Class User {
 
             if(is_array($data)) {
                 //logged in
-                $_SESSION['user_id'] = $data[0]->userid;
                 $_SESSION['username'] = $data[0]->username;
                 $_SESSION['user_url'] = $data[0]->url_address;
 
