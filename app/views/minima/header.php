@@ -47,7 +47,7 @@
                 <?php else: ?>
                   <li><a href="<?=ROOT?>logout">Logout</a></li>
                   <li><a href="<?=ROOT?>upload">Upload</a></li>
-                <?php endif; ?>
+                <?php endif; ?>  
               </ul>
             </div>
           </div>

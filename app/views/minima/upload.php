@@ -12,7 +12,14 @@
 
     <section class="background-white">
         <div class="s-12 m-12 l-4 center">
-            <form name="contactForm" class="customform" method="post">
+            <?php if(isset($_SESSION['error']) && $_SESSION['error'] !== ''): ?>
+                <div style="color: red; padding: 5px; background-color:rgba(105, 27, 85, 0.2); margin-bottom: 10px;
+                text-align:center;">
+                    <?php check_message(); ?>
+                </div>
+            <?php endif; ?>
+
+            <form name="contactForm" class="customform" method="post" enctype="multipart/form-data">
                 <div class="s-12">
                     <input name="title" class="subject" placeholder="Title" title="Title" type="text" required>
                     <p class="subject-error form-error">Please enter a title.</p>
