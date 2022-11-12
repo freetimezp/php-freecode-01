@@ -29,8 +29,15 @@
           </div>
         <?php endforeach; ?>
       <?php endif; ?>
-
     </div>
+
+    <br>
+    <section>
+      <a href="<?=$data['prev_page'];?>"><input type="button" value="prev" class="background-primary text-white"></a>
+      <a href="<?=$data['next_page'];?>"><input type="button" value="next" class="background-primary text-white"></a>
+    </section>
+    <br>
+
   </article>
 </main>
 

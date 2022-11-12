@@ -3,7 +3,14 @@
 Class Posts {
     function get_all() {
         $DB = new Database();
-        $query = "SELECT * FROM images ORDER BY id DESC LIMIT 12";
+
+        $page_number = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $page_number = $page_number < 1 ? 1 : $page_number;
+
+        $limit = 1;
+        $offset = ($page_number - 1) * $limit;
+
+        $query = "SELECT * FROM images ORDER BY id DESC LIMIT $limit OFFSET $offset";
         $data = $DB->read($query);
 
         if(isset($data)) {
